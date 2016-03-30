@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: "Hugh Labusohr"
+  email: "hughlabusohr@mac.com"
+  password_digest: "password"
+
+two:
+  name: "George Labusohr"
+  email: "georgelabusohr@gmail.com"
+  password_digest: "password2"
