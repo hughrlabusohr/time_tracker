@@ -8,7 +8,7 @@ class DevelopersController < ApplicationController
     @developer = Developer.new(developer_params)
 
     if @developer.save
-      redirect_to @developer, notice: 'Developer was succesfully created.'
+      redirect_to developers_path, notice: 'Developer was succesfully created.'
     else
       render :new
     end
@@ -19,7 +19,7 @@ class DevelopersController < ApplicationController
 
   def destroy
     @developer.destroy
-      redirect_to developers_url, notice: 'Developer was successfully destroyed'
+      redirect_to developers_path, notice: 'Developer was successfully destroyed'
   end
 
 
@@ -28,7 +28,7 @@ class DevelopersController < ApplicationController
 
   def update
     if @developer.update(developer_params)
-      redirect_to @developer, notice: 'Developer was successfully updated.'
+      redirect_to developers_path, notice: 'Developer was successfully updated.'
     else
       render :edit
     end

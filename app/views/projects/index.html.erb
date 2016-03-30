@@ -1,8 +1,16 @@
+<nav class="bar">
+  <li>
+    <%= link_to "Manage Projects", projects_path %>
+    <%= link_to "View Time Entries", time_entries_path %>
+    <%= link_to "View Developers", developers_path %>
+  </li>
+</nav>
+
 <h1>Listing Projects</h1>
 
 <table>
   <thead>
-    <tr>
+    <tr class="tablelable">
       <th>Project Name</th>
       <th> Allowed Hours</th>
       <th> Hours Worked</th>
@@ -14,11 +22,11 @@
 
   <tbody>
     <% @projects.each do |project| %>
-      <tr>
+      <tr class="tableright">
         <td><%= project.name %></td>
         <td><%= project.allowed_hours %></td>
         <td><%= project.hours_worked %></td>
-        
+
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

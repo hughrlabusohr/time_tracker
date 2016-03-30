@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<nav>
+<nav class=bar>
   <li>
-    <%= link_to "View Projects", projects_path %>
-    <%= link_to "View Developers", time_entries_path %>
+    <%= link_to "Manage Projects", projects_path %>
+    <%= link_to "View Time Entries", time_entries_path %>
+    <%= link_to "View Developers", developers_path %>
   </li>
 </nav>
 
@@ -11,7 +12,7 @@
 
 <table>
   <thead>
-    <tr>
+    <tr class=tablelable>
       <th>Project ID</th>
       <th>Project Name</th>
       <th>Time Entry Date</th>
@@ -24,7 +25,7 @@
 
   <tbody>
     <% @time_entries.each do |time_entry| %>
-      <tr>
+      <tr class=tableright>
         <td><%= time_entry.project_id %></td>
         <td><%= time_entry.project.name %></td>
         <td><%= time_entry.date %></td>

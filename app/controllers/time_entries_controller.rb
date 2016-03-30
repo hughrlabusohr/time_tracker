@@ -1,6 +1,6 @@
 class TimeEntriesController < ApplicationController
   before_action :logged_in?
-  
+
   def new
     @time_entry = TimeEntry.new
   end
@@ -16,7 +16,7 @@ class TimeEntriesController < ApplicationController
 
   def delete
     @time_entry.destroy
-      redirect_to time_entries_url, notice: 'Time Entry was successfully destroyed.'
+      redirect_to time_entries_path, notice: 'Time Entry was successfully destroyed.'
   end
 
   def index

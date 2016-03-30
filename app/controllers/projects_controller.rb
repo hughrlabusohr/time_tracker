@@ -21,14 +21,14 @@ class ProjectsController < ApplicationController
   end
   def update
     if @project.update(project_params)
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to projects_path, notice: 'Project was successfully updated.'
     else
       render :edit
     end
   end
   def destroy
     @project.destroy
-      redirect_to projects_url, notice: 'Project was successfully destroyed'
+      redirect_to projects_path, notice: 'Project was successfully destroyed'
   end
   def show
   end
