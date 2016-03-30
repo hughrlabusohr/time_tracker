@@ -1,22 +1,23 @@
 class ProjectsController < ApplicationController
+  before_action :logged_in?
   def index
     @projects = Project.all
   end
-  def show
-  end
+
   def new
     @project = Project.new
   end
-  def edit
-  end
+
   def create
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: 'Project was succesfully created.'
+      redirect_to projects_path, notice: 'Project was succesfully created.'
     else
       render :new
     end
+  end
+  def edit
   end
   def update
     if @project.update(project_params)
@@ -29,6 +30,8 @@ class ProjectsController < ApplicationController
     @project.destroy
       redirect_to projects_url, notice: 'Project was successfully destroyed'
   end
+  def show
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -38,6 +41,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, :allowed_hours)
     end
 end

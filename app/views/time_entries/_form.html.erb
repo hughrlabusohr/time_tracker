@@ -17,15 +17,15 @@
   </div>
   <div class="date_field">
     <%= f.label :date %>
-    <%= f.text_field :date %>
+    <%= f.date_select :date %>
   </div>
   <div class="developer_field">
     <%= f.label :developer %>
-    <%= f.collection_select :developer, Developer.all, :id, :name %>
+    <%= f.collection_select :developer_id, Developer.all, :id, :name %>
   </div>
   <div class="project_field">
     <%= f.label :project %><br>
-    <%= f.collection_select :project, Project.all, :id, :name %>
+    <%= f.collection_select :project_id, Project.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

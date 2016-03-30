@@ -1,19 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @developer.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @developer.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @developer.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_developer_path(@developer) %> |
-<%= link_to 'Back', developers_path %>
+<div class="links">
+ <%= link_to "Home", developers_path %>
+</div>

@@ -1,7 +1,7 @@
 <%= form_for(@developer) do |f| %>
   <% if @developer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@developer.errors.count, "error") %> prohibited this teacher from being saved:</h2>
+      <h2><%= pluralize(@developer.errors.count, "error") %> prohibited this developer from being saved:</h2>
 
       <ul>
       <% @developer.errors.full_messages.each do |message| %>
@@ -11,17 +11,16 @@
     </div>
   <% end %>
 
-
-  <div class="name_field">
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="email_field">
+  <div class="field">
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="password_field">
-    <%= f.label :password %><br>
+  <div class="field">
+    <%= f.label :password_digest %><br>
     <%= f.text_field :password_digest %>
   </div>
   <div class="actions">
