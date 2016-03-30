@@ -1,5 +1,6 @@
 class TimeEntriesController < ApplicationController
   before_action :logged_in?
+  
   def new
     @time_entry = TimeEntry.new
   end
