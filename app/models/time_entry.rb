@@ -10,7 +10,7 @@ class TimeEntry < ActiveRecord::Base
       (beginning_of_week..end_of_week)
     ).sum(:duration)
   end
-  def overtime
+  def out_of_time
     work_week > 40
   end
 
